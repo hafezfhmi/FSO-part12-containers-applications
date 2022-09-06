@@ -1,0 +1,11 @@
+Script started on 2024-07-15 16:38:23+08:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="190" LINES="43"]
+hafezfhmi@DESKTOP-LR22BOU:~$ docker start -i 0d8bd8834435a7e139bcec3775fc5134c04a5546a8d0d10126f632db84f09f6a
+root@0d8bd8834435:/# nano /usr/src/app/index.js
+root@0d8bd8834435:/# cat /usr/src/app/index.js
+console.log('Hello World')
+root@0d8bd8834435:/# exit
+exit
+hafezfhmi@DESKTOP-LR22BOU:~$ exit
+exit
+
+Script done on 2024-07-15 16:39:19+08:00 [COMMAND_EXIT_CODE="0"]
