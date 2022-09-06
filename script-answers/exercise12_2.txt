@@ -1,0 +1,10 @@
+Script started on 2024-07-15 15:12:36+08:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="143" LINES="41"]
+hafezfhmi@DESKTOP-LR22BOU:~$ docker container run -it ubuntu bash
+root@e227be2744a7:/# mkdir /usr/src/app
+root@e227be2744a7:/# touch /usr/src/app/index.js
+root@e227be2744a7:/# exit
+exit
+hafezfhmi@DESKTOP-LR22BOU:~$ exit
+exit
+
+Script done on 2024-07-15 15:13:10+08:00 [COMMAND_EXIT_CODE="0"]
