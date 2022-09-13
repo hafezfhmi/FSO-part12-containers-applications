@@ -1,0 +1,79 @@
+Script started on 2024-07-16 14:58:05+08:00 [TERM="xterm-256color" TTY="/dev/pts/11" COLUMN
+S="91" LINES="41"]
+hafezfhmi@DESKTOP-LR22BOU:~/projects/fso-part12$ docker exec -it todo-backend-mongo-1 bash
+root@f97f09c2b1a5:/# mongosh -u root -p example
+Current Mongosh Log ID: 66961a1b13cf9502ae149f47
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serv
+erSelectionTimeoutMS=2000&appName=mongosh+2.2.10
+Using MongoDB:          7.0.12
+Using Mongosh:          2.2.10
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-07-16T06:38:24.083+00:00: Using the XFS filesystem is strongly recommended with the
+ WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2024-07-16T06:38:25.593+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. 
+We suggest setting it to 'never' in this binary version
+   2024-07-16T06:38:25.593+00:00: vm.max_map_count is too low
+------
+
+test> show dbs
+admin         100.00 KiB
+config        108.00 KiB
+local          72.00 KiB
+the_database   72.00 KiB
+test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todos.find()
+[
+  {
+    _id: ObjectId('6696155e8f3f42a7af149f48'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('6696155e8f3f42a7af149f49'),
+    text: 'Learn about containers',
+    done: false
+  }
+]
+the_database> db.todos.insertOne({text: 'Increase the number of tools in my tool belt', don
+e: false})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66961a6a13cf9502ae149f48')
+}
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('6696155e8f3f42a7af149f48'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('6696155e8f3f42a7af149f49'),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId('66961a6a13cf9502ae149f48'),
+    text: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
+the_database> exit
+root@f97f09c2b1a5:/# exit
+exit
+
+What's next?
+  Try Docker Debug for seamless, persistent debugging tools in any container or image → doc
+ker debug todo-backend-mongo-1
+  Learn more at https://docs.docker.com/go/debug-cli/
+hafezfhmi@DESKTOP-LR22BOU:~/projects/fso-part12$ exit
+exit
+
+Script done on 2024-07-16 15:00:20+08:00 [COMMAND_EXIT_CODE="0"]
