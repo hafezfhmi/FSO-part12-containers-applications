@@ -1,0 +1,19 @@
+Script started on 2022-09-15 02:29:49+08:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="132" LINES="25"]
+hafezfhmi@DESKTOP-LR22BOU:/mnt/c/Users/hafez/Coding/part12-containers-applications/todo-app/todo-backend$ docker exec -it 7f963 redis-cli
+127.0.0.1:6379> KEYS *
+1) "added_todos"
+127.0.0.1:6379> GET added_todos
+"1"
+127.0.0.1:6379> SET added_todos 9001
+OK
+127.0.0.1:6379> GET added_todos
+"9001"
+127.0.0.1:6379> GET added_todos
+"9002"
+127.0.0.1:6379> DEL added_todos
+(integer) 1
+127.0.0.1:6379> GET added_todos
+(nil)
+127.0.0.1:6379> GET added_todos
+"1"
+127.0.0.1:6379> exit
