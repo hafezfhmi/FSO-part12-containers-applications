@@ -1,5 +1,3 @@
-version: "3.8" # Version 3.8 is quite new and should work
-
 services:
   app: # The name of the service, can be anything
     image: todo-backend # Declares which image to use
