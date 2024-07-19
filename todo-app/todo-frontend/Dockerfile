@@ -1,19 +1,17 @@
-FROM node:16
+FROM node:16 as build
 
 WORKDIR /usr/src/app
 
-COPY --chown=node:node . .
+COPY . .
 
 RUN npm ci
 
-ENV VITE_BACKEND_URL="http://localhost:3000"
+ENV VITE_BACKEND_URL="http://localhost:8080/api"
 
 RUN npm test
 
 RUN npm run build
 
-RUN npm install -g serve
+FROM nginx:1.25-alpine
 
-USER node
-
-CMD ["serve", "dist"]
+COPY --from=build /usr/src/app/dist /usr/share/nginx/html
